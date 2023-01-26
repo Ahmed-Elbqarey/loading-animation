@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+div{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate( -50%,-50% );
+}
+
+div span{
+  font-size: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 100%;
+  mix-blend-mode: difference;
+  color: white;
+}
+div::before{
+  content: "";
+  width: 100px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation-name: load;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+@keyframes load{
+  0%{
+    left: 0;
+  }
+  50%{
+    left: calc(100% - 100px);
+  }
+  100%{
+    left: 0;
+  }
+
+}
